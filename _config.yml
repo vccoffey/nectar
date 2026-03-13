@@ -1,0 +1,11 @@
+title: Nectar Fusion
+description: A dance event
+baseurl: ""
+url: ""
+
+markdown: kramdown
+permalink: pretty
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
