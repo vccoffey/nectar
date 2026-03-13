@@ -1,3 +1,46 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500&family=Nunito:wght@300;400;600&display=block');
+
+/* Giro webfont */
+@font-face {
+  font-family: 'Giro';
+  src: url('/assets/fonts/girolight001-webfont.woff2') format('woff2'),
+       url('/assets/fonts/girolight001.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'GiroOutline';
+  src: url('/assets/fonts/girooutline001-webfont.woff2') format('woff2'),
+       url('/assets/fonts/girooutline001.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+/* Dissolve animation */
+@keyframes dissolve-out {
+  from {
+    transform: scale(1);
+    opacity: 1;
+    max-height: 500px;
+  }
+  to {
+    transform: scale(0);
+    opacity: 0;
+    max-height: 0;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.dissolve {
+  animation: dissolve-out 0.5s ease-in-out forwards;
+  overflow: hidden;
+}
+
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -10,13 +53,15 @@
   --accent: #c8a96e;
   --text: #e8e8e8;
   --muted: #888;
-  --font: 'Georgia', serif;
+  --font-display: 'Giro', 'Nunito', 'Georgia', serif;
+  --font-body: 'Nunito', 'Oswald', 'Georgia', sans-serif;
+  --font-label: 'Oswald', 'Nunito', 'Arial', sans-serif;
 }
 
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: var(--font);
+  font-family: var(--font-body);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -33,6 +78,7 @@ header {
   font-size: 1.1rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
+  font-family: var(--font-label);
 }
 
 main {
@@ -51,6 +97,7 @@ footer {
   font-size: 0.85rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
+  font-family: var(--font-label);
 }
 
 /* Hero */
@@ -66,6 +113,7 @@ footer {
   color: var(--accent);
   line-height: 1.1;
   margin-bottom: 1rem;
+  font-family: var(--font-display);
 }
 
 .hero .subtitle {
@@ -74,6 +122,7 @@ footer {
   letter-spacing: 0.2em;
   text-transform: uppercase;
   margin-bottom: 3rem;
+  font-family: var(--font-label);
 }
 
 .hero .tagline {
@@ -82,6 +131,7 @@ footer {
   max-width: 480px;
   margin: 0 auto 3rem;
   line-height: 1.7;
+  font-family: var(--font-body);
 }
 
 /* Event details */
@@ -97,6 +147,7 @@ footer {
   color: var(--muted);
   font-size: 0.95rem;
   letter-spacing: 0.1em;
+  font-family: var(--font-label);
 }
 
 .detail-item strong {
