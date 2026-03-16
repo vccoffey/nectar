@@ -4,8 +4,9 @@
 /* Giro webfont */
 @font-face {
   font-family: 'Giro';
-  src: url('/assets/fonts/girolight001-webfont.woff2') format('woff2'),
-       url('/assets/fonts/girolight001.otf') format('opentype');
+  src:
+    url('/assets/fonts/girolight001-webfont.woff2') format('woff2'),
+    url('/assets/fonts/girolight001.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
   font-giro: block;
@@ -13,8 +14,9 @@
 
 @font-face {
   font-family: 'GiroOutline';
-  src: url('/assets/fonts/girooutline001-webfont.woff2') format('woff2'),
-       url('/assets/fonts/girooutline001.otf') format('opentype');
+  src:
+    url('/assets/fonts/girooutline001-webfont.woff2') format('woff2'),
+    url('/assets/fonts/girooutline001.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
   font-giro: block;
@@ -41,7 +43,9 @@
   overflow: hidden;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -50,12 +54,14 @@
 :root {
   --bg: #0d0d0d;
   --surface: #1a1a1a;
-  --accent: #c8a96e;
+  --accent: hsl(29, 38%, 77%);
   --text: #e8e8e8;
   --muted: #888;
   --font-giro: 'Giro', 'Nunito', 'Georgia', serif;
   --font-body: 'Nunito', 'Oswald', 'Georgia', sans-serif;
   --font-oswald: 'Oswald', 'Nunito', 'Arial', sans-serif;
+  --font-size-h1: clamp(5.5rem, 20vw, 14rem);
+  --letter-spacing-hero-accent: clamp(0.3rem, 1vw, 4rem);
 }
 
 body {
@@ -106,38 +112,48 @@ footer {
   padding: 4rem 0;
   text-transform: lowercase;
 
-  .above-title, .below-title {
+  .above-title,
+  .below-title {
+    font-size: clamp(
+      1rem,
+      calc(var(--font-size-h1) * 0.15),
+      calc(var(--font-size-h1) * 0.15)
+    );
     text-transform: uppercase;
     font-family: var(--font-oswald);
+    color: var(--accent);
+    letter-spacing: var(--letter-spacing-hero-accent);
+    &.above-title {
+      letter-spacing: calc(var(--letter-spacing-hero-accent) * 1.33);
+    }
   }
 
   h1 {
-  font-size: clamp(2.5rem, 8vw, 5rem);
-  font-weight: normal;
-  letter-spacing: 0.1em;
-  color: var(--accent);
-  line-height: 1.1;
-  margin-bottom: 1rem;
-  font-family: var(--font-giro);
+    font-size: var(--font-size-h1);
+    margin-top: calc(var(--font-size-h1) * 0.3);
+    line-height: 50%;
+    font-weight: normal;
+    letter-spacing: 0.5rem;
+    color: white;
+    font-family: var(--font-giro);
   }
-}
 
-.hero .subtitle {
-  font-size: 1.1rem;
-  color: var(--muted);
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  margin-bottom: 3rem;
-  font-family: var(--font-oswald);
-}
+  .subtitle {
+    font-size: calc(var(--font-size-h1) * 0.3);
+    color: white;
+    letter-spacing: 0.5rem;
+    text-transform: lowercase;
+    font-family: var(--font-giro);
+  }
 
-.hero .tagline {
-  font-size: 1.15rem;
-  color: var(--text);
-  max-width: 480px;
-  margin: 0 auto 3rem;
-  line-height: 1.7;
-  font-family: var(--font-body);
+  .tagline {
+    font-size: 1.15rem;
+    color: var(--text);
+    max-width: 480px;
+    margin: 0 auto 3rem;
+    line-height: 1.7;
+    font-family: var(--font-body);
+  }
 }
 
 /* Event details */
@@ -177,15 +193,16 @@ main > section + section {
 }
 
 section h2 {
-  font-family: var(--font-giro);
+  font-family: var(--font-oswald);
+  letter-spacing: 0.1em;
   font-size: clamp(1.6rem, 4vw, 2.2rem);
   font-weight: normal;
   color: var(--accent);
   margin-bottom: 2rem;
-  letter-spacing: 0.05em;
 }
 
-section p, section li {
+section p,
+section li {
   line-height: 1.75;
   color: var(--text);
 }
