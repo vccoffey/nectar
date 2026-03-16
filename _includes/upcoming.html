@@ -1,0 +1,22 @@
+<section id="upcoming">
+  <h2>Upcoming Dances</h2>
+
+  {% for event in site.data.events.events %}
+  <div class="event">
+    <h3>{{ event.name }}</h3>
+    <p class="event-meta">{{ event.date | date: "%B %-d, %Y" }} &middot; {{ event.time }} &middot; {{ event.venue }}, {{ event.city }}</p>
+
+    {% if event.schedule %}
+    <ul class="schedule">
+      {% for item in event.schedule %}
+      <li>
+        <span class="schedule-time">{{ item.time }}</span>
+        {{ item.description }}{% if item.facilitator %} &mdash; {{ item.facilitator }}{% endif %}
+        {% if item.note %}<em class="schedule-note">{{ item.note }}</em>{% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </div>
+  {% endfor %}
+</section>

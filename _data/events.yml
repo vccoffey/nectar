@@ -5,30 +5,24 @@ events:
     venue: Laurelhurst Club
     city: Portland, OR
     schedule:
-      - time: "6:00 PM"
-        end_time: "7:00 PM"
+      - time: "6:00 - 7:00 PM"
         description: Intermediate class
         facilitator: Antje Schaefer
       - time: "7:00 PM"
         description: Announcements
-      - time: "7:15 PM"
-        end_time: "7:45 PM"
+      - time: "7:15 - 7:45 PM"
         description: "Beginner/Refresher class (mezzanine)"
         facilitator: Daniel Bullard Bates
         note: "Mask requested — Daniel shares a home with immunocompromised folks"
-      - time: "7:00 PM"
-        end_time: "9:45 PM"
+      - time: "7:00 - 9:45 PM"
         description: DJ sets
         facilitator: "Lovey Davis & DJ Bonbon Spirit"
-      - time: "8:15 PM"
-        end_time: "8:30 PM"
+      - time: "8:15 - 8:30 PM"
         description: Interlude
-      - time: "9:40 PM"
-        end_time: "10:00 PM"
+      - time: "9:40 - 10:00 PM"
         description: Live Instrumentals
         facilitator: Jacob Last
-      - time: "10:05 PM"
-        end_time: "10:30 PM"
+      - time: "10:05 - 10:30 PM"
         description: Snacks & goodbyes
 
   - name: Nectar Fusion Playground
@@ -37,27 +31,21 @@ events:
     venue: Laurelhurst Club
     city: Portland, OR
     schedule:
-      - time: "6:00 PM"
-        end_time: "7:00 PM"
+      - time: "6:00 - 7:00 PM"
         description: Intermediate class
         facilitator: TBD
       - time: "7:00 PM"
         description: Announcements
-      - time: "7:15 PM"
-        end_time: "7:45 PM"
+      - time: "7:15 - 7:45 PM"
         description: "Beginner/Refresher class (mezzanine)"
         facilitator: TBD
-      - time: "7:00 PM"
-        end_time: "9:45 PM"
+      - time: "7:00 - 9:45 PM"
         description: DJ sets
         facilitator: TBD
-      - time: "8:15 PM"
-        end_time: "8:30 PM"
+      - time: "8:15 - 8:30 PM"
         description: Interlude
-      - time: "9:40 PM"
-        end_time: "10:00 PM"
+      - time: "9:40 - 10:00 PM"
         description: Live Instrumentals
         facilitator: TBD
-      - time: "10:05 PM"
-        end_time: "10:30 PM"
+      - time: "10:05 - 10:30 PM"
         description: Snacks & goodbyes
