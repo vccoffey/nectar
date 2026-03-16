@@ -9,12 +9,14 @@
     <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
   </head>
   <body>
-    <section class="hero">
-      <p class="above-title">Welcome To</p>
-      <h1>Nectar</h1>
-      <p class="subtitle">Fusion</p>
-      <p class="below-title">Playground</p>
-    </section>
+    <div class="hero-sticky-wrapper">
+      <section class="hero">
+        <p class="above-title hero-scale">Welcome To</p>
+        <h1>Nectar</h1>
+        <p class="subtitle">Fusion</p>
+        <p class="below-title hero-scale">Playground</p>
+      </section>
+    </div>
     <main>{{ content }}</main>
 
     <footer>
