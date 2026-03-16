@@ -8,7 +8,7 @@
        url('/assets/fonts/girolight001.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
-  font-display: block;
+  font-giro: block;
 }
 
 @font-face {
@@ -17,7 +17,7 @@
        url('/assets/fonts/girooutline001.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
-  font-display: block;
+  font-giro: block;
 }
 
 /* Dissolve animation */
@@ -53,9 +53,9 @@
   --accent: #c8a96e;
   --text: #e8e8e8;
   --muted: #888;
-  --font-display: 'Giro', 'Nunito', 'Georgia', serif;
+  --font-giro: 'Giro', 'Nunito', 'Georgia', serif;
   --font-body: 'Nunito', 'Oswald', 'Georgia', sans-serif;
-  --font-label: 'Oswald', 'Nunito', 'Arial', sans-serif;
+  --font-oswald: 'Oswald', 'Nunito', 'Arial', sans-serif;
 }
 
 body {
@@ -78,7 +78,7 @@ header {
   font-size: 1.1rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  font-family: var(--font-label);
+  font-family: var(--font-oswald);
 }
 
 main {
@@ -97,23 +97,29 @@ footer {
   font-size: 0.85rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  font-family: var(--font-label);
+  font-family: var(--font-oswald);
 }
 
 /* Hero */
 .hero {
   text-align: center;
   padding: 4rem 0;
-}
+  text-transform: lowercase;
 
-.hero h1 {
+  .above-title, .below-title {
+    text-transform: uppercase;
+    font-family: var(--font-oswald);
+  }
+
+  h1 {
   font-size: clamp(2.5rem, 8vw, 5rem);
   font-weight: normal;
   letter-spacing: 0.1em;
   color: var(--accent);
   line-height: 1.1;
   margin-bottom: 1rem;
-  font-family: var(--font-display);
+  font-family: var(--font-giro);
+  }
 }
 
 .hero .subtitle {
@@ -122,7 +128,7 @@ footer {
   letter-spacing: 0.2em;
   text-transform: uppercase;
   margin-bottom: 3rem;
-  font-family: var(--font-label);
+  font-family: var(--font-oswald);
 }
 
 .hero .tagline {
@@ -147,7 +153,7 @@ footer {
   color: var(--muted);
   font-size: 0.95rem;
   letter-spacing: 0.1em;
-  font-family: var(--font-label);
+  font-family: var(--font-oswald);
 }
 
 .detail-item strong {
