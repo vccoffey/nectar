@@ -118,25 +118,31 @@ footer {
   font-family: var(--font-oswald);
 }
 
-/* Hero */
-.hero-sticky-wrapper {
-  height: var(--hero-scale-px);
-  flex-shrink: 0;
-}
-
-.hero {
-  position: sticky;
-  top: calc(var(--font-size-h1) * 0.2);
-}
-
 .hero-scale {
-  animation: hero-scale ease-out;
-  animation-timeline: scroll();
-  animation-range: 0px calc(var(--hero-scale-px));
-  animation-fill-mode: forwards;
   display: flex;
   justify-content: center;
   align-items: center;
+  height: calc(var(--font-size-h1) * 0.75);
+}
+
+@supports (animation-timeline: scroll()) {
+  /* Hero */
+  .hero-sticky-wrapper {
+    height: var(--hero-scale-px);
+    flex-shrink: 0;
+  }
+
+  .hero {
+    position: sticky;
+    top: calc(var(--font-size-h1) * 0.2);
+  }
+
+  .hero-scale {
+    animation: hero-scale ease-out;
+    animation-timeline: scroll();
+    animation-range: 0px calc(var(--hero-scale-px));
+    animation-fill-mode: forwards;
+  }
 }
 
 @keyframes hero-scale {
