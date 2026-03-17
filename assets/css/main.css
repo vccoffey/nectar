@@ -70,6 +70,7 @@
   --gap-lg: 2rem;
   --gap-xl: 3rem;
   --gap-2xl: 4rem;
+  --border: 1px solid #2a2a2a;
 }
 
 body {
@@ -83,7 +84,7 @@ body {
 
 header {
   padding: var(--gap-lg);
-  border-bottom: 1px solid #2a2a2a;
+  border-bottom: var(--border);
 }
 
 .site-title {
@@ -102,13 +103,13 @@ main {
   gap: var(--gap-2xl);
   max-width: 780px;
   margin: 0 auto;
-  padding: var(--gap-md) clamp(var(--gap-md), 4vw, var(--gap-lg)) var(--gap-lg);
+  padding: var(--gap-lg) clamp(var(--gap-md), 4vw, var(--gap-lg)) var(--gap-2xl);
   width: 100%;
 }
 
 footer {
   padding: var(--gap-lg);
-  border-top: 1px solid #2a2a2a;
+  border-top: var(--border);
   text-align: center;
   color: var(--muted);
   font-size: 0.85rem;
@@ -221,22 +222,20 @@ footer {
   color: var(--text);
 }
 
-/* Divider */
+/* Divider (decorative line) */
 .divider {
   width: 60px;
   height: 1px;
   background: var(--accent);
   align-self: center;
   opacity: 0.5;
+  flex-shrink: 0;
 }
 
-/* Sections */
+/* Sections – inter-section spacing only */
 main > section {
-  display: flex;
-  flex-direction: column;
-  gap: var(--gap-md);
   padding-top: var(--gap-2xl);
-  border-top: 1px solid #2a2a2a;
+  border-top: var(--border);
 }
 
 main > section:first-child {
@@ -260,6 +259,8 @@ section li {
 
 /* Upcoming dances */
 #upcoming {
+  display: flex;
+  flex-direction: column;
   gap: var(--gap-xl);
 }
 
@@ -267,13 +268,6 @@ section li {
   display: flex;
   flex-direction: column;
   gap: var(--gap-sm);
-  padding-top: var(--gap-xl);
-  border-top: 1px solid #2a2a2a;
-}
-
-.event:first-child {
-  padding-top: 0;
-  border-top: none;
 }
 
 .event h3 {
@@ -335,7 +329,7 @@ section li {
 
 .schedule {
   list-style: none;
-  border-left: 1px solid #2a2a2a;
+  border-left: var(--border);
   padding-left: var(--gap-lg);
   display: flex;
   flex-direction: column;
@@ -372,6 +366,12 @@ section li {
 }
 
 /* About */
+#about {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-lg);
+}
+
 #about ul {
   list-style: none;
   display: flex;
@@ -387,6 +387,8 @@ section li {
 
 /* Policies */
 #policies {
+  display: flex;
+  flex-direction: column;
   gap: var(--gap-lg);
 }
 
