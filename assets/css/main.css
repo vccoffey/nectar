@@ -201,6 +201,7 @@ footer {
     letter-spacing: 0.5rem;
     color: white;
     font-family: var(--font-giro);
+    text-shadow: 0 0 0.1em white;
   }
 
   .subtitle {
