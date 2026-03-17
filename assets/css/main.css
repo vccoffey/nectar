@@ -62,7 +62,7 @@
   --font-oswald: 'Oswald', 'Nunito', 'Arial', sans-serif;
   --font-size-h1: clamp(5.5rem, 20vw, 14rem);
   --letter-spacing-hero-accent: clamp(0.3rem, 1vw, 4rem);
-  --hero-scale-px: clamp(30rem, 48vw, 48vw);
+  --hero-scale-px: clamp(15rem, 75vw, 60rem);
 
   --gap-xs: 0.25rem;
   --gap-sm: 0.5rem;
