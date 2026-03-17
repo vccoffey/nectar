@@ -81,17 +81,44 @@
 }
 
 body {
-  /* Fallback for browsers that don't support gradients */
   background-color: var(--bg);
-
-  background:
-    var(--bg-gradient),
-    url('/assets/nectar_bg_85.webp') center / cover no-repeat fixed;
   color: var(--text);
   font-family: var(--font-body);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+.bg-layer {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    var(--bg-gradient),
+    url('/assets/nectar_bg_85.webp') center / cover no-repeat;
+}
+
+@media (max-width: 768px) {
+  .bg-layer {
+    background-size: 150%;
+  }
+}
+
+@supports (animation-timeline: scroll()) {
+  .bg-layer {
+    animation: bg-parallax linear;
+    animation-timeline: scroll();
+    animation-fill-mode: none;
+  }
+}
+
+@keyframes bg-parallax {
+  from {
+    background-position: center 0%;
+  }
+  to {
+    background-position: center 100%;
+  }
 }
 
 header {
