@@ -63,7 +63,7 @@
   );
   --accent: hsl(29, 38%, 77%);
   --text: #e8e8e8;
-  --muted: #888;
+  --muted: hsl(0, 0%, 65%);
   --font-giro: 'Giro', 'Nunito', 'Georgia', serif;
   --font-body: 'Nunito', 'Oswald', 'Georgia', sans-serif;
   --font-oswald: 'Oswald', 'Nunito', 'Arial', sans-serif;
