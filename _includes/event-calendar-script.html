@@ -1,31 +1,34 @@
 <script>
   document.querySelectorAll('.calendar-ics').forEach((el) => {
     el.addEventListener('click', (e) => {
-      e.preventDefault();
+      e.preventDefault()
       const [y, m, d] = el
         .getAttribute('data-event-date')
         .split('-')
-        .map(Number);
+        .map(Number)
       const match = el
         .getAttribute('data-event-time')
-        .match(/(\d{1,2}):(\d{2})\s*-\s*(\d{1,2}):(\d{2})/);
-      if (!match) return;
-      const start = new Date(y, m - 1, d, ...match.slice(1, 3).map(Number));
-      const end = new Date(y, m - 1, d, ...match.slice(3, 5).map(Number));
+        .match(/(\d{1,2}):(\d{2})\s*-\s*(\d{1,2}):(\d{2})/)
+      if (!match) return
+      const start = new Date(y, m - 1, d, ...match.slice(1, 3).map(Number))
+      const end = new Date(y, m - 1, d, ...match.slice(3, 5).map(Number))
       const toICS = (dt) =>
-        dt.toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, '');
+        dt
+          .toISOString()
+          .replace(/[-:]/g, '')
+          .replace(/\.\d{3}/, '')
       const escapeICS = (s) =>
         String(s || '')
           .replace(/\\/g, '\\\\')
           .replace(/;/g, '\\;')
           .replace(/,/g, '\\,')
-          .replace(/\n/g, '\\n');
+          .replace(/\n/g, '\\n')
       const schedule = (el.getAttribute('data-event-schedule') || '')
         .split('|||')
-        .join('\n');
+        .join('\n')
       const desc = schedule
         ? `SUMMARY:${escapeICS(el.getAttribute('data-event-name'))}\r\nLOCATION:${escapeICS(el.getAttribute('data-event-location'))}\r\nDESCRIPTION:${escapeICS(schedule)}`
-        : `SUMMARY:${escapeICS(el.getAttribute('data-event-name'))}\r\nLOCATION:${escapeICS(el.getAttribute('data-event-location'))}`;
+        : `SUMMARY:${escapeICS(el.getAttribute('data-event-name'))}\r\nLOCATION:${escapeICS(el.getAttribute('data-event-location'))}`
       const ics = [
         'BEGIN:VCALENDAR',
         'VERSION:2.0',
@@ -35,13 +38,13 @@
         desc,
         'END:VEVENT',
         'END:VCALENDAR',
-      ].join('\r\n');
-      const blob = new Blob([ics], { type: 'text/calendar' });
-      const a = document.createElement('a');
-      a.href = URL.createObjectURL(blob);
-      a.download = `${el.getAttribute('data-event-name').replace(/[^a-z0-9]/gi, '-')}.ics`;
-      a.click();
-      URL.revokeObjectURL(a.href);
-    });
-  });
+      ].join('\r\n')
+      const blob = new Blob([ics], { type: 'text/calendar' })
+      const a = document.createElement('a')
+      a.href = URL.createObjectURL(blob)
+      a.download = `${el.getAttribute('data-event-name').replace(/[^a-z0-9]/gi, '-')}.ics`
+      a.click()
+      URL.revokeObjectURL(a.href)
+    })
+  })
 </script>
