@@ -1,55 +1,46 @@
 <section id="upcoming">
   <h2>Upcoming Dances</h2>
 
-  {% for event in site.data.events.events %}
+  {% for event in site.data.events.events %} {% capture schedule_text %} {% if
+  event.schedule %} {% for item in event.schedule %} {{ item.time }}: {{
+  item.description }}{% if item.facilitator %} — {{ item.facilitator }}{% endif
+  %}{% if item.note %} ({{ item.note }}){% endif %} {% endfor %} {% endif %} {%
+  endcapture %}
   <div class="event">
     <h3>{{ event.name }}</h3>
-    <p class="event-meta">
-      <time datetime="{{ event.date }}"
-        >{{ event.date | date: "%B %-d, %Y" }}</time
-      >
-      <span>&middot;</span>
-      <span
-        class="event-time"
-        data-date="{{ event.date }}"
-        data-time="{{ event.time }}"
-        >{{ event.time }}</span
-      >
-      <span>&middot;</span>
-      <a
-        href="https://www.google.com/maps/search/?api=1&query={{ event.venue | append: ', ' | append: event.city | url_encode }}"
-        target="_blank"
-        rel="noopener"
-        aria-label="map"
-        class="venue-map-link"
-        ><svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="14"
-          height="14"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+    <div class="event-meta-group">
+      <p class="event-meta">
+        <time datetime="{{ event.date }}"
+          >{{ event.date | date: "%B %-d, %Y" }}</time
         >
-          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-          <circle cx="12" cy="10" r="3" />
-        </svg>
-        {{ event.venue }}, {{ event.city }}</a
-      >
-    </p>
-
+        <span>&middot;</span>
+        <span
+          class="event-time"
+          data-date="{{ event.date }}"
+          data-time="{{ event.time }}"
+          >{{ event.time }}</span
+        >
+        <span>&middot;</span>
+        {% include map-link.html event=event %}
+      </p>
+      <p class="event-meta">
+        Add to Calendar {% include event-links.html event=event
+        schedule_text=schedule_text %}
+      </p>
+    </div>
     {% if event.schedule %}
     <ul class="schedule">
       {% for item in event.schedule %}
       <li>
         <span class="schedule-time">{{ item.time }}</span>
-        {{ item.description }}{% if item.facilitator %} &mdash; {{
-        item.facilitator }}{% endif %} {% if item.note %}<em
-          class="schedule-note"
-          >{{ item.note }}</em
-        >{% endif %}
+        <div class="schedule-item">
+          <div class="schedule-description">
+            {{ item.description }} {% if item.facilitator %} &mdash; {{
+            item.facilitator }}{% endif %}
+          </div>
+          {% if item.note %}<em class="schedule-note">{{ item.note }}</em>{%
+          endif %}
+        </div>
       </li>
       {% endfor %}
     </ul>

@@ -1,0 +1,19 @@
+<span class="add-to-calendar">
+  <a
+    href="https://www.google.com/calendar/render?action=TEMPLATE&text={{ include.event.name | url_encode }}&dates={{ include.event.date | remove: '-' }}T{{ include.event.time | split: ' - ' | first | remove: ':' }}00/{{ include.event.date | remove: '-' }}T{{ include.event.time | split: ' - ' | last | remove: ':' }}00&location={{ include.event.venue | append: ', ' | append: include.event.city | url_encode }}&details={{ include.schedule_text | strip | url_encode }}&ctz=America/Los_Angeles"
+    target="_blank"
+    rel="noopener"
+    class="calendar-link"
+    >{% include icon-calendar.svg %} Google</a
+  >
+  <a
+    href="#"
+    class="calendar-link calendar-ics"
+    data-event-name="{{ include.event.name }}"
+    data-event-date="{{ include.event.date }}"
+    data-event-time="{{ include.event.time }}"
+    data-event-location="{{ include.event.venue }}, {{ include.event.city }}"
+    data-event-schedule="{{ include.schedule_text | strip }}"
+    >{% include icon-calendar.svg %} iOS</a
+  >
+</span>
