@@ -20,7 +20,9 @@
           .replace(/;/g, '\\;')
           .replace(/,/g, '\\,')
           .replace(/\n/g, '\\n');
-      const schedule = el.getAttribute('data-event-schedule');
+      const schedule = (el.getAttribute('data-event-schedule') || '')
+        .split('|||')
+        .join('\n');
       const desc = schedule
         ? `SUMMARY:${escapeICS(el.getAttribute('data-event-name'))}\r\nLOCATION:${escapeICS(el.getAttribute('data-event-location'))}\r\nDESCRIPTION:${escapeICS(schedule)}`
         : `SUMMARY:${escapeICS(el.getAttribute('data-event-name'))}\r\nLOCATION:${escapeICS(el.getAttribute('data-event-location'))}`;

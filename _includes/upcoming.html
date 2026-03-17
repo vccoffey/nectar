@@ -1,11 +1,10 @@
+<h2>Upcoming Dances</h2>
 <section id="upcoming">
-  <h2>Upcoming Dances</h2>
-
-  {% for event in site.data.events.events %} {% capture schedule_text %} {% if
-  event.schedule %} {% for item in event.schedule %} {{ item.time }}: {{
+  {% for event in site.data.events.events %} {% capture schedule_text %}{% if
+  event.schedule %}{% for item in event.schedule %}{{ item.time }}: {{
   item.description }}{% if item.facilitator %} — {{ item.facilitator }}{% endif
-  %}{% if item.note %} ({{ item.note }}){% endif %} {% endfor %} {% endif %} {%
-  endcapture %}
+  %}{% if item.note %} ({{ item.note }}){% endif %}{% unless forloop.last
+  %}|||{% endunless %}{% endfor %}{% endif %}{% endcapture %}
   <div class="event">
     <h3>{{ event.name }}</h3>
     <div class="event-meta-group">

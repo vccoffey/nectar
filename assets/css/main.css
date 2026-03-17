@@ -339,32 +339,36 @@ section li {
   padding-left: var(--gap-lg);
   display: flex;
   flex-direction: column;
-  gap: var(--gap-sm);
-}
+  gap: var(--gap-md);
 
-.schedule li {
-  display: flex;
-  flex-direction: column;
-  gap: var(--gap-xs);
-  font-size: 0.95rem;
-  color: var(--text);
-
-  .schedule-item {
+  li {
     display: flex;
     flex-direction: column;
+    gap: var(--gap-xs);
+    font-size: 0.95rem;
+    color: var(--text);
+
+    .schedule-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .schedule-description {
+      line-height: 95%;
+    }
+
+    .schedule-time {
+      font-family: var(--font-oswald);
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+    }
+
+    .schedule-note {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
   }
-}
-
-.schedule-time {
-  font-family: var(--font-oswald);
-  font-size: 0.8rem;
-  letter-spacing: 0.08em;
-  color: var(--accent);
-}
-
-.schedule-note {
-  font-size: 0.85rem;
-  color: var(--muted);
 }
 
 /* About */

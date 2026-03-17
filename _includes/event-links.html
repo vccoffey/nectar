@@ -1,6 +1,7 @@
 <span class="add-to-calendar">
   <a
-    href="https://www.google.com/calendar/render?action=TEMPLATE&text={{ include.event.name | url_encode }}&dates={{ include.event.date | remove: '-' }}T{{ include.event.time | split: ' - ' | first | remove: ':' }}00/{{ include.event.date | remove: '-' }}T{{ include.event.time | split: ' - ' | last | remove: ':' }}00&location={{ include.event.venue | append: ', ' | append: include.event.city | url_encode }}&details={{ include.schedule_text | strip | url_encode }}&ctz=America/Los_Angeles"
+    href="https://www.google.com/calendar/render?action=TEMPLATE&text={{ include.event.name | url_encode }}&dates={{ include.event.date | remove: '-' }}T{{ include.event.time | split: ' - ' | first | remove: ':' }}00/{{ include.event.date | remove: '-' }}T{{ include.event.time | split: ' - ' | last | remove: ':' }}00&location={{ include.event.venue | append: ', ' | append: include.event.city | url_encode }}&details={{ include.schedule_text | strip | replace: '|||', '
+' | url_encode }}&ctz=America/Los_Angeles"
     target="_blank"
     rel="noopener"
     class="calendar-link"
