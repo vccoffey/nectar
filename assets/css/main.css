@@ -268,11 +268,27 @@ section p + p {
 }
 
 .event-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  align-items: center;
   font-family: var(--font-oswald);
   font-size: 0.85rem;
   letter-spacing: 0.1em;
   color: var(--muted);
   margin-bottom: 1.5rem;
+}
+
+.event-meta a.venue-map-link {
+  display: inline-flex;
+  gap: 0.25em;
+  align-items: center;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.event-meta a.venue-map-link:hover {
+  color: var(--text);
 }
 
 .schedule {
