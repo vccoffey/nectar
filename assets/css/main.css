@@ -91,6 +91,15 @@ body {
   flex-direction: column;
 }
 
+a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--text);
+}
+
 header {
   padding: var(--gap-lg);
   border-bottom: var(--border);

@@ -1,5 +1,5 @@
 events:
-  - name: 'Nectar Fusion Playground ~ Sprout'
+  - name: 'Nectar Fusion Playground ~ Sprout!'
     date: 2026-03-19
     time: '18:00 - 22:30'
     venue: Laurelhurst Club
@@ -10,22 +10,22 @@ events:
         facilitator: Antje Schaefer
       - time: '7:00 PM'
         description: Announcements
-      - time: '7:15 - 7:45 PM'
+      - time: '7:05 - 7:35 PM'
         description: 'Beginner/Refresher class (mezzanine)'
         facilitator: Daniel Bullard Bates
         note: 'Mask requested — Daniel shares a home with immunocompromised folks'
-      - time: '7:00 - 9:45 PM'
+      - time: '7:00 - 9:40 PM'
         description: DJ sets
-        facilitator: 'Lovey Davis & DJ Bonbon Spirit'
+        facilitator: 'Lovey Davis (Portland) & DJ Bonbon Spirit (Eugene)'
       - time: '8:15 - 8:30 PM'
         description: Interlude
       - time: '9:40 - 10:00 PM'
         description: Live Instrumentals
         facilitator: Jacob Last
-      - time: '10:05 - 10:30 PM'
+      - time: '10:00 - 10:30 PM'
         description: Snacks & goodbyes
 
-  - name: Nectar Fusion Playground
+  - name: Nectar Fusion Playground - April
     date: 2026-04-16
     time: '18:00 - 22:30'
     venue: Laurelhurst Club
@@ -33,19 +33,19 @@ events:
     schedule:
       - time: '6:00 - 7:00 PM'
         description: Intermediate class
-        facilitator: TBD
+        facilitator: Colleen Carris
       - time: '7:00 PM'
         description: Announcements
-      - time: '7:15 - 7:45 PM'
+      - time: '7:05 - 7:35 PM'
         description: 'Beginner/Refresher class (mezzanine)'
         facilitator: TBD
-      - time: '7:00 - 9:45 PM'
+      - time: '7:00 - 9:40 PM'
         description: DJ sets
-        facilitator: TBD
+        facilitator: Violet Yancey (Seattle) & TBD
       - time: '8:15 - 8:30 PM'
         description: Interlude
       - time: '9:40 - 10:00 PM'
         description: Live Instrumentals
         facilitator: TBD
-      - time: '10:05 - 10:30 PM'
+      - time: '10:00 - 10:30 PM'
         description: Snacks & goodbyes
