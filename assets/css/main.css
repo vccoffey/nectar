@@ -91,13 +91,6 @@ body {
   flex-direction: column;
 }
 
-/* iOS Safari: fixed backgrounds scale incorrectly, use scroll */
-@supports (-webkit-touch-callout: none) {
-  body {
-    background-attachment: scroll, scroll;
-  }
-}
-
 a {
   color: var(--muted);
   text-decoration: none;
