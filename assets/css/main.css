@@ -6,17 +6,7 @@
     url('/assets/fonts/girolight001.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'GiroOutline';
-  src:
-    url('/assets/fonts/girooutline001-webfont.woff2') format('woff2'),
-    url('/assets/fonts/girooutline001.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
+  font-display: block;
 }
 
 /* Dissolve animation */
