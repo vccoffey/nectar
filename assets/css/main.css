@@ -56,7 +56,7 @@
     transparent 0%,
     transparent calc(var(--hero-scale-px) * 0.84),
     /* hsla(319, 60%, 8%, 0.4) calc(var(--hero-scale-px) * 0.89), */
-    hsla(319, 60%, 6%, 0.6) calc(var(--hero-scale-px) * 1.25),
+    hsla(319, 60%, 6%, 0.6) calc(var(--hero-scale-px) * 1.2),
     /* hsla(319, 60%, 5%, 0.9) calc(var(--hero-scale-px) * 1.5), */
     hsla(319, 60%, 4%, 0.8) 100%
   );
@@ -76,7 +76,8 @@
   --gap-lg: 2rem;
   --gap-xl: 3rem;
   --gap-2xl: 4rem;
-  --border: 1px solid #2a2a2a;
+  --border-divider: 1px solid hsla(0, 0%, 33%, 0);
+  --border-side: 1px solid hsla(0, 0%, 100%, 0.1);
 }
 
 html {
@@ -140,7 +141,7 @@ a:hover {
 
 header {
   padding: var(--gap-lg);
-  border-bottom: var(--border);
+  border-bottom: var(--border-divider);
 }
 
 .starts-hidden,
@@ -173,7 +174,7 @@ main {
 
 footer {
   padding: var(--gap-md) var(--gap-xl);
-  border-top: var(--border);
+  border-top: var(--border-divider);
   color: var(--muted);
   font-size: 1.1rem;
   letter-spacing: 0.1em;
@@ -334,7 +335,7 @@ section.standard-flex {
 /* Sections – inter-section spacing only */
 main > section {
   padding-top: var(--gap-2xl);
-  border-top: var(--border);
+  border-top: var(--border-divider);
 }
 
 main > section:first-child {
@@ -444,7 +445,7 @@ section li {
 
 .schedule {
   list-style: none;
-  border-left: var(--border);
+  border-left: var(--border-side);
   padding-left: var(--gap-lg);
   display: flex;
   flex-direction: column;
