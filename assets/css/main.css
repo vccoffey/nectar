@@ -78,17 +78,44 @@
 }
 
 body {
-  /* Fallback for browsers that don't support gradients */
   background-color: var(--bg);
-
-  background:
-    var(--bg-gradient),
-    url('/assets/nectar_bg_50.webp') center / cover no-repeat fixed;
   color: var(--text);
   font-family: var(--font-body);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+.outer-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-gradient);
+}
+
+.bg-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  min-width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
+  max-height: 100vh;
+  z-index: -1;
+  background-image: url('/assets/nectar_bg_50.webp');
+  background-position: 50% 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* iOS: lock dimensions to prevent background scaling on scroll */
+@supports (-webkit-touch-callout: none) {
+  .bg-layer {
+    height: 100svh;
+    min-height: 100svh;
+    max-height: 100svh;
+  }
 }
 
 a {
@@ -160,6 +187,13 @@ footer {
     animation-timeline: scroll();
     animation-range: 0px calc(var(--hero-scale-px));
     animation-fill-mode: forwards;
+  }
+}
+
+/* iOS: disable hero scroll animation — causes janky scale effect */
+@supports (-webkit-touch-callout: none) {
+  .hero-scale {
+    animation: none;
   }
 }
 
@@ -370,10 +404,11 @@ section li {
     .schedule-item {
       display: flex;
       flex-direction: column;
+      gap: var(--gap-xs);
     }
 
     .schedule-description {
-      line-height: 95%;
+      line-height: 120%;
     }
 
     .schedule-time {
@@ -386,6 +421,7 @@ section li {
     .schedule-note {
       font-size: 0.85rem;
       color: var(--muted);
+      line-height: 105%;
     }
   }
 }

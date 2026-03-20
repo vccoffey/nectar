@@ -37,23 +37,30 @@
     <title>
       {% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}
     </title>
-    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
+    <link
+      rel="stylesheet"
+      href="{{ '/assets/css/main.css' | relative_url }}?v={{ site.time | date: '%s' }}"
+    />
   </head>
   <body>
-    <div class="hero-sticky-wrapper">
-      <section class="hero">
-        <p class="above-title hero-scale">Welcome To</p>
-        <h1>Nectar</h1>
-        <p class="subtitle">Fusion</p>
-        <p class="below-title hero-scale">Playground</p>
-      </section>
+    <div class="bg-layer" aria-hidden="true"></div>
+    <div class="outer-container">
+      <div class="hero-sticky-wrapper">
+        <section class="hero">
+          <p class="above-title hero-scale">Welcome To</p>
+          <h1>Nectar</h1>
+          <p class="subtitle">Fusion</p>
+          <p class="below-title hero-scale">Playground</p>
+        </section>
+      </div>
+      <main>{{ content }}</main>
+
+      <footer>
+        <p>
+          original art by <a href="https://www.jasminecoart.com/">Jasmine Co</a>
+        </p>
+      </footer>
     </div>
-    <main>{{ content }}</main>
-
-    <footer>
-      <p>original art by <a href="https://www.jasminecoart.com/">Jasmine Co</a></p>
-    </footer>
-
     <script>
       const fmt = { date: { dateStyle: 'long' }, time: { timeStyle: 'short' } }
 
