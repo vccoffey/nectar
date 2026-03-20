@@ -20,7 +20,7 @@
 }
 
 /* Dissolve animation */
-@keyframes dissolve-out {
+/* @keyframes dissolve-out {
   from {
     transform: scale(1);
     opacity: 1;
@@ -38,7 +38,7 @@
 .dissolve {
   animation: dissolve-out 0.5s ease-in-out forwards;
   overflow: hidden;
-}
+} */
 
 *,
 *::before,
@@ -49,14 +49,16 @@
 }
 
 :root {
-  --bg: hsl(319, 60%, 8%);
+  --bg-hue: 319;
+  --bg-overlay-under-hero: hsla(var(--bg-hue), 60%, 8%, 0.4);
   --bg-gradient: linear-gradient(
     to bottom,
-    hsla(319, 60%, 8%, 0.4) 0%,
-    hsla(319, 60%, 8%, 0.4) calc(var(--hero-scale-px) * 0.75),
-    hsla(319, 60%, 6%, 0.8) calc(var(--hero-scale-px) * 1),
-    hsla(319, 60%, 5%, 0.85) calc(var(--hero-scale-px) * 1.5)
-      /* hsla(319, 60%, 4%, 0.9) 100% */
+    transparent 0%,
+    transparent calc(var(--hero-scale-px) * 0.84),
+    /* hsla(319, 60%, 8%, 0.4) calc(var(--hero-scale-px) * 0.89), */
+    hsla(319, 60%, 6%, 0.6) calc(var(--hero-scale-px) * 1.25),
+    /* hsla(319, 60%, 5%, 0.9) calc(var(--hero-scale-px) * 1.5), */
+    hsla(319, 60%, 4%, 0.8) 100%
   );
   --accent: hsl(29, 38%, 77%);
   --text: hsl(0, 0%, 91%);
@@ -103,10 +105,15 @@ body {
   min-height: 100vh;
   max-height: 100vh;
   z-index: -1;
-  background-image: url('/assets/nectar_bg_50.webp');
-  background-position: 50% 0;
-  background-size: cover;
-  background-repeat: no-repeat;
+  &.image {
+    background-image: url('/assets/nectar_bg_50.webp');
+    background-position: 50% 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  &.overlay {
+    background: var(--bg-overlay-under-hero);
+  }
 }
 
 /* iOS: lock dimensions to prevent background scaling on scroll */
@@ -155,7 +162,8 @@ main {
   gap: var(--gap-2xl);
   max-width: 780px;
   margin: 0 auto;
-  padding: var(--gap-lg) clamp(var(--gap-md), 4vw, var(--gap-lg)) var(--gap-2xl);
+  padding: var(--gap-2xl) clamp(var(--gap-md), 4vw, var(--gap-lg))
+    var(--gap-2xl);
   width: 100%;
 }
 
