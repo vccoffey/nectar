@@ -79,6 +79,10 @@
   --border: 1px solid #2a2a2a;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: var(--bg);
   color: var(--text);
@@ -168,14 +172,29 @@ main {
 }
 
 footer {
-  padding: var(--gap-lg);
+  padding: var(--gap-md) var(--gap-xl);
   border-top: var(--border);
-  text-align: center;
   color: var(--muted);
-  font-size: 0.85rem;
+  font-size: 1.1rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   font-family: var(--font-oswald);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .website a {
+    font-size: 0.6rem;
+  }
+
+  .website,
+  .jasmine-co {
+    font-size: 0.75rem;
+    flex: 1;
+    &.jasmine-co {
+      text-align: right;
+    }
+  }
 }
 
 .hero-scale {
@@ -465,17 +484,24 @@ section li {
 
 /* About */
 
-#about ul {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: var(--gap-sm);
-  padding-left: 0;
-}
+#about {
+  .here-we-invite {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-md);
+  }
+  ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-sm);
+    padding-left: 0;
+  }
 
-#about li::before {
-  content: '— ';
-  color: var(--accent);
+  li::before {
+    content: '— ';
+    color: var(--accent);
+  }
 }
 
 /* Policies */
