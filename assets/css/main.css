@@ -111,10 +111,11 @@ body {
   max-height: 100vh;
   z-index: -1;
   &.image {
-    background-image: url('/assets/nectar_bg_50.webp');
+    background-image: url('/assets/bg-placeholder.webp');
     background-position: 50% 0;
     background-size: cover;
     background-repeat: no-repeat;
+    transition: background-image 0.4s ease;
   }
   &.overlay {
     background: var(--bg-overlay-under-hero);
