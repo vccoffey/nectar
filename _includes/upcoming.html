@@ -1,51 +1,14 @@
-<section id="upcoming">
-  <h2>Upcoming Dances</h2>
-
-  {% for event in site.data.events.events %} {% capture schedule_text %} {% if
-  event.schedule %} {% for item in event.schedule %} {{ item.time }}: {{
-  item.description }}{% if item.facilitator %} — {{ item.facilitator }}{% endif
-  %}{% if item.note %} ({{ item.note }}){% endif %}{% unless forloop.last
-  %}|||{% endunless %} {% endfor %} {% endif %} {% endcapture %}
-
-  <div class="event">
-    <h3>{{ event.name }}</h3>
-    <div class="event-meta-group">
-      <p class="event-meta">
-        <time datetime="{{ event.date }}"
-          >{{ event.date | date: "%B %-d, %Y" }}</time
-        >
-        <span>&middot;</span>
-        <span
-          class="event-time"
-          data-date="{{ event.date }}"
-          data-time="{{ event.time }}"
-          >{{ event.time }}</span
-        >
-        <span>&middot;</span>
-        {% include map-link.html event=event %}
-      </p>
-      <p class="event-meta">
-        Add to Calendar {% include event-links.html event=event
-        schedule_text=schedule_text %}
-      </p>
-    </div>
-    {% if event.schedule %}
-    <ul class="schedule">
-      {% for item in event.schedule %}
-      <li>
-        <span class="schedule-time">{{ item.time }}</span>
-        <div class="schedule-item">
-          <div class="schedule-description">
-            {{ item.description }} {% if item.facilitator %} &mdash; {{
-            item.facilitator }}{% endif %}
-          </div>
-          {% if item.note %}<em class="schedule-note">{{ item.note }}</em>{%
-          endif %}
-        </div>
-      </li>
-      {% endfor %}
-    </ul>
-    {% endif %}
+<div id="events" class="events-container" hidden>
+  <section id="tonight" class="events-section standard-flex" hidden>
+    <h2>Tonight</h2>
+    <div class="events-list"></div>
+  </section>
+  <section id="upcoming" class="events-section standard-flex" hidden>
+    <h2>Upcoming</h2>
+    <div class="events-list"></div>
+  </section>
+  <div class="events-pool">
+    {% for event in site.data.events.events %} {% include event.html event=event
+    %} {% endfor %}
   </div>
-  {% endfor %}
-</section>
+</div>

@@ -1,0 +1,38 @@
+<script>
+  ;(function () {
+    const pool = document.querySelector('.events-pool')
+    const tonightList = document.querySelector('#tonight .events-list')
+    const upcomingList = document.querySelector('#upcoming .events-list')
+    const container = document.getElementById('events')
+    if (!pool || !tonightList || !upcomingList || !container) return
+
+    const today = new Date()
+    const todayStr = [
+      today.getFullYear(),
+      String(today.getMonth() + 1).padStart(2, '0'),
+      String(today.getDate()).padStart(2, '0'),
+    ].join('-')
+
+    const events = Array.from(pool.querySelectorAll('.event'))
+    pool.innerHTML = ''
+
+    events.forEach((el) => {
+      const dateStr = el.getAttribute('data-date')
+      if (!dateStr) return
+      if (dateStr < todayStr) return
+      if (dateStr === todayStr) {
+        tonightList.appendChild(el)
+      } else {
+        upcomingList.appendChild(el)
+      }
+    })
+
+    const tonightSection = document.getElementById('tonight')
+    const upcomingSection = document.getElementById('upcoming')
+    if (tonightList.children.length > 0) tonightSection.hidden = false
+    if (upcomingList.children.length > 0) upcomingSection.hidden = false
+    if (tonightList.children.length > 0 || upcomingList.children.length > 0) {
+      container.hidden = false
+    }
+  })()
+</script>

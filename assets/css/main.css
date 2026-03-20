@@ -291,6 +291,12 @@ footer {
   flex-shrink: 0;
 }
 
+section.standard-flex {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-lg);
+}
+
 /* Sections – inter-section spacing only */
 main > section {
   padding-top: var(--gap-2xl);
@@ -316,11 +322,27 @@ section li {
   color: var(--text);
 }
 
-/* Upcoming dances */
-#upcoming {
+/* Events */
+.events-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-2xl);
+}
+
+/* .events-section {
   display: flex;
   flex-direction: column;
   gap: var(--gap-xl);
+} */
+
+.events-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-xl);
+}
+
+.events-pool {
+  display: none;
 }
 
 .event {
@@ -427,11 +449,6 @@ section li {
 }
 
 /* About */
-#about {
-  display: flex;
-  flex-direction: column;
-  gap: var(--gap-lg);
-}
 
 #about ul {
   list-style: none;

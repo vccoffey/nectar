@@ -1,0 +1,38 @@
+{% capture schedule_text %}
+  {% if include.event.schedule %}
+    {% for item in include.event.schedule %}
+      {{ item.time }}: {{ item.description }}{% if item.facilitator %} — {{ item.facilitator }}{% endif %}{% if item.note %} ({{ item.note }}){% endif %}{% unless forloop.last %}|||{% endunless %}
+    {% endfor %}
+  {% endif %}
+{% endcapture %}
+
+<div class="event" data-date="{{ include.event.date }}">
+  <h3>{{ include.event.name }}</h3>
+  <div class="event-meta-group">
+    <p class="event-meta">
+      <time datetime="{{ include.event.date }}">{{ include.event.date | date: "%B %-d, %Y" }}</time>
+      <span>&middot;</span>
+      <span class="event-time" data-date="{{ include.event.date }}" data-time="{{ include.event.time }}">{{ include.event.time }}</span>
+      <span>&middot;</span>
+      {% include map-link.html event=include.event %}
+    </p>
+    <p class="event-meta">
+      Add to Calendar {% include event-links.html event=include.event schedule_text=schedule_text %}
+    </p>
+  </div>
+  {% if include.event.schedule %}
+  <ul class="schedule">
+    {% for item in include.event.schedule %}
+    <li>
+      <span class="schedule-time">{{ item.time }}</span>
+      <div class="schedule-item">
+        <div class="schedule-description">
+          {{ item.description }}{% if item.facilitator %} &mdash; {{ item.facilitator }}{% endif %}
+        </div>
+        {% if item.note %}<em class="schedule-note">{{ item.note }}</em>{% endif %}
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+</div>
