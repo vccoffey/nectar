@@ -132,6 +132,13 @@ header {
   border-bottom: var(--border);
 }
 
+.starts-hidden,
+section.starts-hidden,
+section.standard-flex.starts-hidden {
+  /* win the specificity battle */
+  display: none;
+}
+
 .site-title {
   color: var(--accent);
   text-decoration: none;
@@ -150,10 +157,6 @@ main {
   margin: 0 auto;
   padding: var(--gap-lg) clamp(var(--gap-md), 4vw, var(--gap-lg)) var(--gap-2xl);
   width: 100%;
-}
-
-#tonight {
-  display: none;
 }
 
 footer {
