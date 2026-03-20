@@ -152,6 +152,10 @@ main {
   width: 100%;
 }
 
+#tonight {
+  display: none;
+}
+
 footer {
   padding: var(--gap-lg);
   border-top: var(--border);
