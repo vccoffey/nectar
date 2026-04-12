@@ -25,7 +25,7 @@ events:
       - time: '10:00 - 10:30 PM'
         description: Snacks & goodbyes
 
-  - name: Nectar Fusion Playground - Bloom
+  - name: 'Nectar Fusion Playground - Bloom'
     date: 2026-04-16
     time: '18:00 - 22:30'
     venue: Laurelhurst Club
@@ -38,11 +38,11 @@ events:
         description: Announcements
       - time: '7:05 - 7:35 PM'
         description: 'Beginner/Refresher class (mezzanine)'
-       facilitator: Daniel Bullard Bates
-       note: 'Mask requested — Daniel shares a home with immunocompromised folks' 
+        facilitator: Daniel Bullard Bates
+        note: 'Mask requested — Daniel shares a home with immunocompromised folks'
       - time: '7:05 - 9:40 PM'
         description: DJ sets
-        facilitator: Addie Moon (Portland) & Matthias Tsunami (Portland)
+        facilitator: 'Addie Moon (Portland) & Matthias Tsunami (Portland)'
       - time: '8:15 - 8:30 PM'
         description: Interlude
       - time: '9:40 - 10:00 PM'
@@ -51,4 +51,7 @@ events:
       - time: '10:00 - 10:30 PM'
         description: Snacks & goodbyes
 
- 
+  - name: 'Nectar Fusion Playground - May'
+    venue: Laurelhurst Park
+    city: Portland, OR
+    note: 'More details coming soon'
