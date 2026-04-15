@@ -68,6 +68,8 @@
   --gap-2xl: 4rem;
   --border-divider: 1px solid hsla(0, 0%, 33%, 0);
   --border-side: 1px solid hsla(0, 0%, 100%, 0.1);
+
+  --main-side-padding: clamp(var(--gap-md), 4vw, var(--gap-lg));
 }
 
 html {
@@ -158,13 +160,12 @@ main {
   gap: var(--gap-2xl);
   max-width: 780px;
   margin: 0 auto;
-  padding: var(--gap-2xl) clamp(var(--gap-md), 4vw, var(--gap-lg))
-    var(--gap-2xl);
+  padding: var(--gap-2xl) var(--main-side-padding) var(--gap-2xl);
   width: 100%;
 }
 
 footer {
-  padding: var(--gap-md) var(--gap-xl);
+  padding: var(--gap-md) var(--main-side-padding);
   border-top: var(--border-divider);
   color: var(--muted);
   font-size: 1.1rem;
@@ -173,6 +174,7 @@ footer {
   font-family: var(--font-oswald);
 
   display: flex;
+  gap: var(--gap-md);
   justify-content: space-between;
   align-items: center;
   .website a {
