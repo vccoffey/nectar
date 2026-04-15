@@ -39,17 +39,19 @@
 }
 
 :root {
-  --bg-hue: 319;
+  --bg-hue-maroon: 319;
+  --bg-hue-golden-yellow: 40;
+  --bg-hue: var(--bg-hue-maroon);
   --bg-overscroll-color: hsl(var(--bg-hue), 25%, 6%);
   --bg-overlay-under-hero: hsla(var(--bg-hue), 60%, 8%, 0.4);
   --bg-gradient: linear-gradient(
     to bottom,
     transparent 0%,
     transparent calc(var(--hero-scale-px) * 0.84),
-    /* hsla(319, 60%, 8%, 0.4) calc(var(--hero-scale-px) * 0.89), */
-    hsla(319, 60%, 6%, 0.6) calc(var(--hero-scale-px) * 1.2),
-    /* hsla(319, 60%, 5%, 0.9) calc(var(--hero-scale-px) * 1.5), */
-    hsla(319, 60%, 4%, 0.8) 100%
+    /* hsla(var(--bg-hue), 60%, 8%, 0.4) calc(var(--hero-scale-px) * 0.89), */
+    hsla(var(--bg-hue), 60%, 6%, 0.6) calc(var(--hero-scale-px) * 1.2),
+    /* hsla(var(--bg-hue), 60%, 5%, 0.9) calc(var(--hero-scale-px) * 1.5), */
+    hsla(var(--bg-hue), 60%, 4%, 0.8) 100%
   );
   --accent: hsl(29, 38%, 77%);
   --text: hsl(0, 0%, 91%);
