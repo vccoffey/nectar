@@ -10,16 +10,25 @@
   <h3>{{ include.event.name }}</h3>
   <div class="event-meta-group">
     <p class="event-meta">
-      <time datetime="{{ include.event.date }}">{{ include.event.date | date: "%B %-d, %Y" }}</time>
-      <span>&middot;</span>
-      <span class="event-time" data-date="{{ include.event.date }}" data-time="{{ include.event.time }}">{{ include.event.time }}</span>
-      <span>&middot;</span>
+      {% if include.event.date %}
+        <time datetime="{{ include.event.date }}">{{ include.event.date | date: "%B %-d, %Y" }}</time>
+        <span>&middot;</span>
+      {% endif %}
+      {% if include.event.time %}
+        <span class="event-time" data-date="{{ include.event.date }}" data-time="{{ include.event.time }}">{{ include.event.time }}</span>
+        <span>&middot;</span>
+      {% endif %}
       {% include map-link.html event=include.event %}
     </p>
-    <p class="event-meta">
-      Add to Calendar {% include event-links.html event=include.event schedule_text=schedule_text %}
-    </p>
+    {% if include.event.add_to_calendar_links %}
+      <p class="event-meta">
+        Add to Calendar {% include event-links.html event=include.event schedule_text=schedule_text %}
+      </p>
+    {% endif %}
   </div>
+  {% if include.event.note %}
+    <div class="event-note">{{ include.event.note }}</div>
+  {% endif %}
   {% if include.event.schedule %}
   <ul class="schedule">
     {% for item in include.event.schedule %}
