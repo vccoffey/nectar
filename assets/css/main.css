@@ -40,6 +40,7 @@
 
 :root {
   --bg-hue: 319;
+  --bg-overscroll-color: hsl(var(--bg-hue), 25%, 6%);
   --bg-overlay-under-hero: hsla(var(--bg-hue), 60%, 8%, 0.4);
   --bg-gradient: linear-gradient(
     to bottom,
@@ -74,10 +75,10 @@
 
 html {
   scroll-behavior: smooth;
+  background-color: var(--bg-overscroll-color);
 }
 
 body {
-  background-color: var(--bg);
   color: var(--text);
   font-family: var(--font-body);
   min-height: 100vh;
@@ -215,13 +216,6 @@ footer {
     animation-timeline: scroll();
     animation-range: 0px calc(var(--hero-scale-px));
     animation-fill-mode: forwards;
-  }
-}
-
-/* iOS: disable hero scroll animation — causes janky scale effect */
-@supports (-webkit-touch-callout: none) {
-  .hero-scale {
-    animation: none;
   }
 }
 
