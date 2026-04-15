@@ -1,0 +1,16 @@
+gpush_version: '>=2.9.0'
+
+parallel_run:
+  - name: prettier
+    shell: npx prettier --check --ignore-unknown $(gpush_changed_files)
+    if: gpush_changed_files
+
+  - name: Yaml Lint
+    shell: npx yamllint "**/*.{yaml,yml}" --ignore="vendor/**" --ignore="node_modules/**"
+
+  - name: Uncommitted git changes
+    shell: git diff --name-only --exit-code
+
+  - name: claude review
+    shell: ruby script/gpush_claude_review.rb
+    if: claude --version # check if claude is installed
