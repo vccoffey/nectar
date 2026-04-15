@@ -4,6 +4,7 @@ events:
     time: '18:00 - 22:30'
     venue: Laurelhurst Club
     city: Portland, OR
+    add_to_calendar_links: true
     schedule:
       - time: '6:00 - 7:00 PM'
         description: Intermediate class
@@ -30,6 +31,7 @@ events:
     time: '18:00 - 22:30'
     venue: Laurelhurst Club
     city: Portland, OR
+    add_to_calendar_links: true
     schedule:
       - time: '6:00 - 7:00 PM'
         description: Intermediate class
@@ -51,7 +53,9 @@ events:
       - time: '10:00 - 10:30 PM'
         description: Snacks & goodbyes
 
-  - name: 'Nectar Fusion Playground - May'
+  - name: Nectar Fusion Playground - May
+    date: Date TBD
+    add_to_calendar_links: false
     venue: Laurelhurst Park
     city: Portland, OR
-    note: 'More details coming soon'
+    note: Outdoor Nectar Fusion in the park! More details coming soon.
