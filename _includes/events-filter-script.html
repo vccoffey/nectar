@@ -6,16 +6,16 @@
     const container = document.getElementById('events')
     if (!pool || !tonightList || !upcomingList || !container) return
 
-    const today = new Date()
+    const today = new Date().toISOString().slice(0, 10)
 
     const events = Array.from(pool.querySelectorAll('.event'))
     pool.innerHTML = ''
 
     events.forEach((el) => {
-      const thisDate = new Date(el.getAttribute('data-date'))
-      if (!thisDate) return
-      if (thisDate < today) return
-      if (thisDate === today) tonightList.appendChild(el)
+      const date = el.getAttribute('data-date')
+      if (!date) return
+      if (date < today) return
+      if (date === today) tonightList.appendChild(el)
       else upcomingList.appendChild(el)
     })
 
