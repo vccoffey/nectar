@@ -1,4 +1,15 @@
 <script>
+  function toIsoDateString(date) {
+    const y = date.getFullYear()
+    const m = String(date.getMonth() + 1).padStart(2, '0')
+    const d = String(date.getDate()).padStart(2, '0')
+    return `${y}-${m}-${d}`
+  }
+
+  function isIsoDateString(string) {
+    return /^\d{4}-\d{2}-\d{2}$/.test(string) && !isNaN(new Date(string))
+  }
+
   ;(function () {
     const pool = document.querySelector('.events-pool')
     const tonightList = document.querySelector('#tonight .events-list')
@@ -6,18 +17,21 @@
     const container = document.getElementById('events')
     if (!pool || !tonightList || !upcomingList || !container) return
 
-    const _now = new Date()
-    const today = `${_now.getFullYear()}-${String(_now.getMonth()+1).padStart(2,'0')}-${String(_now.getDate()).padStart(2,'0')}`
+    const todayStr = toIsoDateString(new Date())
 
     const events = Array.from(pool.querySelectorAll('.event'))
     pool.innerHTML = ''
 
     events.forEach((el) => {
-      const date = el.getAttribute('data-date')
-      if (!date) return
-      if (date < today) return
-      if (date === today) tonightList.appendChild(el)
-      else upcomingList.appendChild(el)
+      const dateStr = el.getAttribute('data-date')
+      if (isIsoDateString(dateStr)) {
+        if (dateStr === todayStr) {
+          tonightList.appendChild(el)
+          return
+        }
+        if (dateStr < todayStr) return // reject past event
+      }
+      upcomingList.appendChild(el) // if upcoming OR if date is unparsable
     })
 
     const tonightSection = document.getElementById('tonight')
