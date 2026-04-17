@@ -6,7 +6,7 @@ parallel_run:
     if: gpush_changed_files
 
   - name: Yaml Lint
-    shell: npx yamllint "**/*.{yaml,yml}" --ignore="vendor/**" --ignore="node_modules/**"
+    shell: npx yaml-lint "**/*.{yaml,yml}"
 
   - name: Uncommitted git changes
     shell: git diff --name-only --exit-code
