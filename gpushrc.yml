@@ -1,5 +1,8 @@
 gpush_version: '>=2.9.0'
 
+fix:
+  - shell: npx prettier --write .
+
 parallel_run:
   - name: prettier
     shell: npx prettier --check --ignore-unknown $(gpush_changed_files)
