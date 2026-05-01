@@ -9,6 +9,24 @@
   font-display: block;
 }
 
+/* Nunito */
+@font-face {
+  font-family: 'Nunito';
+  src: url('/assets/fonts/nunito-latin.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: block;
+}
+
+/* Oswald */
+@font-face {
+  font-family: 'Oswald';
+  src: url('/assets/fonts/oswald-latin.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: block;
+}
+
 /* Dissolve animation */
 /* @keyframes dissolve-out {
   from {
