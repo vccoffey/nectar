@@ -54,8 +54,9 @@ events:
         description: Snacks & goodbyes
 
   - name: Nectar Fusion Playground - May
-    date: Date TBD
-    add_to_calendar_links: false
+    date: 2026-05-31
+    time: '17:00 - 20:00'
+    add_to_calendar_links: true
     venue: Laurelhurst Park
     city: Portland, OR
-    note: Outdoor Nectar Fusion in the park! More details coming soon.
+    note: Outdoor Nectar Fusion in Laurelhurst Park! This will be the last Nectar Fusion event of the season. Join us!
