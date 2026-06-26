@@ -128,7 +128,7 @@ body {
     background-position: 50% 0;
     background-size: cover;
     background-repeat: no-repeat;
-    transition: background-image 0.4s ease;
+    transition: background-image 2s ease;
   }
   &.overlay {
     background: var(--bg-overlay-under-hero);
