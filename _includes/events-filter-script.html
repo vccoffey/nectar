@@ -36,11 +36,13 @@
 
     const tonightSection = document.getElementById('tonight')
     const upcomingSection = document.getElementById('upcoming')
+    const noEventsSection = document.getElementById('no-events')
     if (tonightList.children.length > 0)
       tonightSection.classList.remove('starts-hidden')
     if (upcomingList.children.length > 0)
       upcomingSection.classList.remove('starts-hidden')
     if (tonightList.children.length > 0 || upcomingList.children.length > 0)
       container.classList.remove('starts-hidden')
+    else if (noEventsSection) noEventsSection.classList.remove('starts-hidden')
   })()
 </script>

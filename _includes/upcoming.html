@@ -7,6 +7,13 @@
     <h2>Upcoming</h2>
     <div class="events-list"></div>
   </section>
+  <section id="no-events" class="events-section standard-flex starts-hidden">
+    <h2>Between Seasons</h2>
+    <p>
+      There's nothing on the calendar right now. Sign up for our newsletter
+      below and we'll let you know as soon as the next dance is announced.
+    </p>
+  </section>
   <div class="events-pool">
     {% for event in site.data.events.events %} {% include event.html event=event
     %} {% endfor %}
