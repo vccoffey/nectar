@@ -453,8 +453,7 @@ section li {
 .event-note {
   display: flex;
   flex-direction: column;
-  gap: var(--gap-sm);
-  line-height: 130%;
+  gap: var(--gap-md);
 }
 
 .schedule {

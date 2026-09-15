@@ -9,3 +9,9 @@ permalink: pretty
 exclude:
   - Gemfile
   - Gemfile.lock
+  - gpushrc.yml
+  - node_modules
+  - package-lock.json
+  - package.json
+  - runit.sh
+  - script
