@@ -27,7 +27,7 @@
     {% endif %}
   </div>
   {% if include.event.note %}
-    <div class="event-note">{{ include.event.note }}</div>
+    <div class="event-note">{{ include.event.note | markdownify }}</div>
   {% endif %}
   {% if include.event.schedule %}
   <ul class="schedule">

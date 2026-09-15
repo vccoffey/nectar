@@ -60,3 +60,44 @@ events:
     venue: Laurelhurst Park
     city: Portland, OR
     note: Outdoor Nectar Fusion in Laurelhurst Park! This will be the last Nectar Fusion event of the season. Join us!
+
+  - name: 'Nectar pre-season Workshop + mini-dance'
+    date: 2026-09-20
+    time: '15:00 - 19:30'
+    venue: North Coast Seed Bldg Artist Studios
+    city: Portland, OR
+    add_to_calendar_links: true
+    note: >-
+      As the summer winds down and we transition into the Nectar season, join us
+      in honing our skills at a lil' pre-season dance moment. This workshop
+      focuses on range — our ability to respond proportionately to the moment
+      with agility and attunement.
+
+
+      Some partner dance experience recommended. Classes are not geared toward
+      beginners, but are beginner inclusive.
+
+
+      **$45-70 sliding scale.** To register, Venmo @nectar-fusion and write
+      "pre-nectar" in the notes. Space is limited to 24 people, with partial
+      work trade spots available. If cost is a barrier, reach out!
+
+
+      We're in Studio #211 on the second floor. Wear layers, and bring a water
+      bottle, socks to move in, and snacks for yourself (or to share!).
+    schedule:
+      - time: '2:45 PM'
+        description: Doors open
+        note: The door is locked — please arrive on time to be let in
+      - time: '3:00 - 4:15 PM'
+        description: 'Class 1: Foundations for Big Conversations in Small Spaces'
+        facilitator: Antje Schaefer
+        note: Body & group warm-up. Honing the small and subtle with intentional patterns and surprises — a mix of somatic awareness, social zhushing, play, and partnering skills.
+      - time: '4:30 - 5:55 PM'
+        description: 'Class 2: Range & Responsiveness'
+        facilitator: Antje Schaefer
+        note: Mixing qualities of movement in tune to musicality, momentum, and spatial negotiation. From micro to macro and back again.
+      - time: '6:00 - 7:00 PM'
+        description: Nectar droplet — DJ'd, lightly facilitated dance
+      - time: '7:00 - 7:30 PM'
+        description: Snacks & goodbyes
