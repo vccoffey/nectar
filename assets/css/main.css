@@ -62,18 +62,59 @@
   --bg-hue: var(--bg-hue-maroon);
   --bg-overscroll-color: hsl(var(--bg-hue), 25%, 6%);
   --bg-overlay-under-hero: hsla(var(--bg-hue), 60%, 8%, 0.4);
+  --bg-ramp-start: calc(9rem - var(--hero-scale-px) * 0.1);
+  --bg-ramp-end: calc(var(--hero-scale-px) * 1.8);
   --bg-gradient: linear-gradient(
     to bottom,
     transparent 0%,
-    transparent calc(var(--hero-scale-px) * 0.84),
-    /* hsla(var(--bg-hue), 60%, 8%, 0.4) calc(var(--hero-scale-px) * 0.89), */
-    hsla(var(--bg-hue), 60%, 6%, 0.6) calc(var(--hero-scale-px) * 1.2),
-    /* hsla(var(--bg-hue), 60%, 5%, 0.9) calc(var(--hero-scale-px) * 1.5), */
+    /* smoothstep ease (3t² − 2t³) so the ramp has no visible band edges */
+    hsla(var(--bg-hue), 60%, 6%, 0)
+      calc(
+        var(--bg-ramp-start) + (var(--bg-ramp-end) - var(--bg-ramp-start)) * 0
+      ),
+    hsla(var(--bg-hue), 60%, 6%, 0.032)
+      calc(
+        var(--bg-ramp-start) + (var(--bg-ramp-end) - var(--bg-ramp-start)) *
+          0.125
+      ),
+    hsla(var(--bg-hue), 60%, 6%, 0.117)
+      calc(
+        var(--bg-ramp-start) + (var(--bg-ramp-end) - var(--bg-ramp-start)) *
+          0.25
+      ),
+    hsla(var(--bg-hue), 60%, 6%, 0.237)
+      calc(
+        var(--bg-ramp-start) + (var(--bg-ramp-end) - var(--bg-ramp-start)) *
+          0.375
+      ),
+    hsla(var(--bg-hue), 60%, 6%, 0.375)
+      calc(
+        var(--bg-ramp-start) + (var(--bg-ramp-end) - var(--bg-ramp-start)) * 0.5
+      ),
+    hsla(var(--bg-hue), 60%, 6%, 0.513)
+      calc(
+        var(--bg-ramp-start) + (var(--bg-ramp-end) - var(--bg-ramp-start)) *
+          0.625
+      ),
+    hsla(var(--bg-hue), 60%, 6%, 0.633)
+      calc(
+        var(--bg-ramp-start) + (var(--bg-ramp-end) - var(--bg-ramp-start)) *
+          0.75
+      ),
+    hsla(var(--bg-hue), 60%, 6%, 0.718)
+      calc(
+        var(--bg-ramp-start) + (var(--bg-ramp-end) - var(--bg-ramp-start)) *
+          0.875
+      ),
+    hsla(var(--bg-hue), 60%, 6%, 0.75)
+      calc(
+        var(--bg-ramp-start) + (var(--bg-ramp-end) - var(--bg-ramp-start)) * 1
+      ),
     hsla(var(--bg-hue), 60%, 4%, 0.8) 100%
   );
   --accent: hsl(29, 38%, 77%);
   --text: hsl(0, 0%, 91%);
-  --muted: hsl(0, 0%, 65%);
+  --muted: hsl(0, 0%, 75%);
   --font-giro: 'Giro', 'Nunito', 'Georgia', serif;
   --font-body: 'Nunito', 'Oswald', 'Georgia', sans-serif;
   --font-oswald: 'Oswald', 'Nunito', 'Arial', sans-serif;
@@ -314,7 +355,6 @@ footer {
 
 .detail-item {
   color: var(--muted);
-  font-size: 0.95rem;
   letter-spacing: 0.1em;
   font-family: var(--font-oswald);
 }
@@ -414,7 +454,6 @@ section li {
   gap: var(--gap-sm);
   align-items: center;
   font-family: var(--font-oswald);
-  font-size: 0.85rem;
   letter-spacing: 0.1em;
   color: var(--muted);
 }
@@ -468,7 +507,6 @@ section li {
     display: flex;
     flex-direction: column;
     gap: var(--gap-xs);
-    font-size: 0.95rem;
     color: var(--text);
 
     .schedule-item {
