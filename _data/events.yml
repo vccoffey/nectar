@@ -101,3 +101,25 @@ events:
         description: Nectar droplet — DJ'd, lightly facilitated dance
       - time: '7:00 - 7:30 PM'
         description: Snacks & goodbyes
+
+  - name: Nectar Fusion Playground
+    date: 2026-11-15
+    time: '18:00 - 22:30'
+    venue: 3300 SE Woodward St
+    city: Portland, OR
+    add_to_calendar_links: true
+    note: Welcome to the first event of the Nectar season in our new cozy home!
+    schedule:
+      - time: '6:00 - 7:00 PM'
+        description: All levels class
+        facilitator: Daniel Bullard Bates
+      - time: '7:00 PM'
+        description: Announcements
+      - time: '7:00 - 9:40 PM'
+        description: DJ sets
+        facilitator: 'Trinidad Peretz & Rose Crespo (Seattle)'
+      - time: '9:40 - 10:00 PM'
+        description: Live Instrumentals
+        facilitator: Sean Frenette
+      - time: '10:00 - 10:30 PM'
+        description: Snacks & goodbyes
