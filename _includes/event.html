@@ -7,7 +7,7 @@
 {% endcapture %}
 
 <div class="event" data-date="{{ include.event.date }}">
-  <h3>{{ include.event.name }}</h3>
+  {% if include.event.name %}<h3>{{ include.event.name }}</h3>{% endif %}
   <div class="event-meta-group">
     <p class="event-meta">
       {% if include.event.date %}
