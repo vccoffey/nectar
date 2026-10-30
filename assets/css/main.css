@@ -301,8 +301,7 @@ footer {
   text-align: center;
   text-transform: lowercase;
 
-  .above-title,
-  .below-title {
+  .above-title {
     font-size: clamp(
       1rem,
       var(--font-size-h1) * 0.15,
@@ -311,10 +310,7 @@ footer {
     text-transform: uppercase;
     font-family: var(--font-oswald);
     color: var(--accent);
-    letter-spacing: var(--letter-spacing-hero-accent);
-    &.above-title {
-      letter-spacing: calc(var(--letter-spacing-hero-accent) * 1.33);
-    }
+    letter-spacing: calc(var(--letter-spacing-hero-accent) * 1.33);
   }
 
   h1 {
