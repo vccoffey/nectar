@@ -13,9 +13,11 @@
   ;(function () {
     const pool = document.querySelector('.events-pool')
     const tonightList = document.querySelector('#tonight .events-list')
+    const nextList = document.querySelector('#next .events-list')
     const upcomingList = document.querySelector('#upcoming .events-list')
     const container = document.getElementById('events')
-    if (!pool || !tonightList || !upcomingList || !container) return
+    if (!pool || !tonightList || !nextList || !upcomingList || !container)
+      return
 
     const todayStr = toIsoDateString(new Date())
 
@@ -31,17 +33,23 @@
         }
         if (dateStr < todayStr) return // reject past event
       }
-      upcomingList.appendChild(el) // if upcoming OR if date is unparsable
+      // if upcoming OR if date is unparsable
+      const isFirst =
+        tonightList.children.length === 0 && nextList.children.length === 0
+      ;(isFirst ? nextList : upcomingList).appendChild(el)
     })
 
     const tonightSection = document.getElementById('tonight')
+    const nextSection = document.getElementById('next')
     const upcomingSection = document.getElementById('upcoming')
     const noEventsSection = document.getElementById('no-events')
     if (tonightList.children.length > 0)
       tonightSection.classList.remove('starts-hidden')
+    if (nextList.children.length > 0)
+      nextSection.classList.remove('starts-hidden')
     if (upcomingList.children.length > 0)
       upcomingSection.classList.remove('starts-hidden')
-    if (tonightList.children.length > 0 || upcomingList.children.length > 0)
+    if (tonightList.children.length > 0 || nextList.children.length > 0)
       container.classList.remove('starts-hidden')
     else if (noEventsSection) noEventsSection.classList.remove('starts-hidden')
   })()
