@@ -34,9 +34,23 @@
         if (dateStr < todayStr) return // reject past event
       }
       // if upcoming OR if date is unparsable
-      const isFirst =
-        tonightList.children.length === 0 && nextList.children.length === 0
-      ;(isFirst ? nextList : upcomingList).appendChild(el)
+      if (tonightList.children.length === 0 && nextList.children.length === 0) {
+        nextList.appendChild(el)
+        return
+      }
+      const item = document.createElement('li')
+      const date = el.querySelector('time')
+      const calendarLinks = el.querySelector('.add-to-calendar')
+      if (date) {
+        item.className = 'event-meta'
+        item.appendChild(date)
+        if (calendarLinks) {
+          const separator = document.createElement('span')
+          separator.innerHTML = '&middot;'
+          item.append(separator, calendarLinks)
+        }
+      } else item.appendChild(el)
+      upcomingList.appendChild(item)
     })
 
     const tonightSection = document.getElementById('tonight')

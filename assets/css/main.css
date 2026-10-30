@@ -538,13 +538,14 @@ section li {
     flex-direction: column;
     gap: var(--gap-md);
   }
-  ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: var(--gap-sm);
-    padding-left: 0;
-  }
+}
+
+.dash-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-sm);
+  padding-left: 0;
 
   li::before {
     content: '— ';
